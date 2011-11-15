@@ -9,7 +9,7 @@ These are the sources to compile with Arduino
 Includes **Timer1** libraries from Jesse Tane http://labs.ideo.com  
 LCD Nokia6100 Epson controller libraries by James P Lynch  
 Some LCD functions modified by [Alfredo Prado][2]  
-Minestation web page: [minestation.me][id]
+Minestation web page: [http://minestation.me][id]
 
 [id]:minestation.me
 Just another Open Hardware Project  
