@@ -1,0 +1,6 @@
+# Ignores
+\.DS_Store
+\applet
+*.b*
+*.pr*
+*.s*

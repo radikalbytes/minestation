@@ -1,0 +1,7 @@
+# Minestation 0.1  
+These are the sources to compile with Arduino  
+fonts.h is a header file that contains the fonts generators  
+foto.h contains data to generate the bitmap on screen  
+
+Alfredo Prado  
+Xavier Belanche  
