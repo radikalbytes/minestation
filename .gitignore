@@ -1,6 +1,7 @@
 # Ignores
 \.DS_Store
 \applet
+\java
 *.b*
 *.pr*
 *.s*

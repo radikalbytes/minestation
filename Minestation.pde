@@ -528,16 +528,21 @@ void calculatePosSunMoon(){
     if ((www>420) & (www<480)) {
        PosXSun=((www-420)/6)-10; 
        PosYSun=22-((www-420)/8); 
-       levelLight=5-((www-420)/12);
-       putBackground();
+       if (levelLight!=5-((www-420)/12)){
+         levelLight=5-((www-420)/12);
+         putBackground();
+       }  
     }  
     //sunrising
     else if ((www>1200) & (www<1260)) {
        PosXSun=54+((www-1200)/6);
        PosYSun=15+((www-1200)/8);
-       levelLight=((www-1200)/12);
-       putBackground();       
+       if (((www-1200)/12)!=levelLight){
+         levelLight=((www-1200)/12);
+         putBackground();
+       }       
     }
+    
     else if ((www>480) & (www<1200)) {
        PosXSun=(www-480)/13; 
        PosYSun=15;
