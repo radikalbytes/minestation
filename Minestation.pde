@@ -318,6 +318,7 @@ void loop()
   int  px,py;
   int  dd,ee;
   char  str_tmp[16];
+  int xxx,yyy;
 
   
   //Put World Name centered
@@ -344,10 +345,13 @@ void loop()
   LCDPutStr("Z: ",            63, 73, SMALL, WHITE,  BLACK);
   LCDPutStr(PosZ_str,         63, 86, SMALL,  WHITE,  BLACK);  //  LCDPutStr("6x8  How'r'u?",            24, 1, SMALL,  GREEN,  BLACK);
   
-  
+  xxx=PosXSun;
+  yyy=PosYSun;
   calculatePosSunMoon();
-  if ((Hour<21) & (Hour>6)) drawSunMoon(PosXSun,PosYSun,YELLOW);
-  else drawSunMoon(PosXSun,PosYSun,WHITE);
+  if ((xxx!=PosXSun) | (yyy!=PosYSun)){
+    if ((Hour<21) & (Hour>6)) drawSunMoon(PosXSun,PosYSun,YELLOW);
+    else drawSunMoon(PosXSun,PosYSun,WHITE);
+  }
  // drawCloud1(-3,12);
  // drawCloud2(23,35);
   drawStormIcon(68,77);
