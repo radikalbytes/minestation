@@ -1,5 +1,10 @@
 #include <TimerOne.h>
 
+ #if defined(ARDUINO) && ARDUINO >= 100
+  #include "Arduino.h"
+  #else
+  #include "WProgram.h"
+  #endif
 /****************************************************/
 /* Example Program For LCD6610 (NPX)                */
 /* MCU      : Arduino Nano                          */
@@ -195,6 +200,7 @@ int   hourTmp;
 int   minuteTmp;
 int   dayTmp;
 int   levelLight=5;
+int   inByte;
 
 
 /*************************************************************/
@@ -382,10 +388,12 @@ void loop()
      LCDPutStr(str_tmp, 82, 86, SMALL,WHITE,BLACK);
   else 
      LCDPutStr(" Clear ", 82, 86, SMALL,WHITE,BLACK);
-     
-  recibe_trama();
-  command_process();
- 
+  inByte=Serial.read();
+  
+  if(inByte=='@'){
+     recibe_trama();
+     command_process();
+  }
  
 } 
 
@@ -634,11 +642,11 @@ void calculateTime(long ttt){
 }
 
 void recibe_trama(){
-  byte inByte = '\0';
+ /* byte inByte = '\0';
    while(inByte != inicio_trama) {
     while(!Serial.available());            // wait for input
     inByte = Serial.read(); // Wait for the start of the message
-   } 
+   }*/ 
    
     detachInterrupt(0);    //Save from resets by overflow
     detachInterrupt(1);    //Save from resets by overflow
