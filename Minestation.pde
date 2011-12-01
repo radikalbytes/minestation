@@ -1,4 +1,8 @@
 #include <TimerOne.h>
+// Compatiblity with Arduino IDE 1.0
+// Arduino API used in v.22 libraries
+// is WProgram.h
+// and in v1.0 it's renamed to Arduino.h
 
  #if defined(ARDUINO) && ARDUINO >= 100
   #include "Arduino.h"
